@@ -1,6 +1,6 @@
 # 第三方许可与来源
 
-万灵原创部分采用根目录 LICENSE 中的闭源本地试用授权。以下许可只适用于对应的第三方部分，不将整个应用改为该许可证。
+万灵原创部分采用根目录 LICENSE 中的 Apache-2.0 开源许可，署名见 NOTICE。以下第三方部分仍适用其各自许可，不改为万灵的许可证。
 
 | 部分 | 许可 | 随附记录 |
 | --- | --- | --- |
@@ -26,3 +26,9 @@
 - https://github.com/lovell/sharp
 - https://github.com/lovell/sharp-libvips
 - https://ffmpeg.org/legal.html
+
+## 社区版首次启动取得的工具
+
+社区 MSI 与 ZIP 不捆绑第三方运行工具。使用者首次启动时从 Node.js 官方下载 Node.js 24.21.0，保留完整发行目录中的 LICENSE 与 npm 许可；从官方 npm registry 安装 package-lock.json 锁定的 sharp 及原生依赖，保留各包许可；从 FFmpeg 官方下载页推荐的 Gyan 构建仓库取得 FFmpeg/FFprobe 9.0.2，保留其 LICENSE、README 和文档。Gyan 该构建采用 GPLv3，应用通过独立命令行调用它，不把 FFmpeg 库链接进应用。固定下载地址与 SHA-256 见 scripts/community-runtime.json，成功准备后的来源记录保存在本机 runtime/setup/provenance.json。
+
+Windows MSI 由 WiX Toolset 编译，仅含 Windows Installer 表与应用文件，不含 WiX 自定义动作或工具运行库。WiX 编译工具不随安装包分发。
